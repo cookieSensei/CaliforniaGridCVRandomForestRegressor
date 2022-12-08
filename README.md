@@ -1,6 +1,6 @@
 # CaliforniaGridCVRandomForestRegressor
 
-1 - Run the ipynb file on your jupyter notebook or colab to generate the random forest ML model.
+1 - Run the ipynb file on your jupyter notebook or colab to generate the random forest ML model. <br>
 2 - Use the py file to run the website, on the terminal type: 
   streamlit run model_deployment.py
 
