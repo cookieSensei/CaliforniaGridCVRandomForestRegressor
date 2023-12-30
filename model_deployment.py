@@ -3,7 +3,6 @@ import joblib
 from PIL import Image
 
 import streamlit as st
-import shap
 
 import numpy as np
 import pandas as pd
@@ -98,11 +97,40 @@ print(final_predictions)
 ####################
 st.header("California House Price Predictions")
 st.write("""
-California House Price Prediction App
 This app predicts the **California House Price**!
 """)
 
 st.write('---')
+
+####################################
+
+
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+from plotly.offline import iplot
+
+df=pd.read_csv('housing.csv')
+
+fig = px.scatter_mapbox(
+    df, lat="latitude", 
+    lon="longitude", 
+    hover_data=['housing_median_age', 'total_rooms',
+       'total_bedrooms', 'population', 'households', 'median_income',
+       'median_house_value'],
+    color=df["median_house_value"],
+    color_continuous_scale=px.colors.sequential.Agsunset, 
+    size=df["population"]/1e5,
+    zoom=4, height=500)
+
+fig.update_layout(mapbox_style="open-street-map")
+fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+
+
+st.plotly_chart(fig, use_container_width=True)
+
+df
+#################################
 
 # Sidebar
 # Header of Specify Input Parameters
@@ -167,6 +195,18 @@ print(final_predictions)
 #########################
 
 
+
+
+
+
+
+
+
+
+
+
+######################################
+
 # Print specified input parameters
 st.header('Specified Input parameters')
 st.write(housing)
@@ -179,7 +219,14 @@ st.write('---')
 
 ##############
 st.header("Population Density vs House Value")
+# image = Image.open("California Town Density.jpg")
 image = Image.open("California Town Density.jpg")
 st.image(image)
+
 # st.image(image, caption='Population Density vs House Value')
+
+
+###########################
+
+
 
