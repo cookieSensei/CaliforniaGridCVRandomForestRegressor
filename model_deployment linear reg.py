@@ -207,10 +207,10 @@ print(final_predictions)
 
 # ######################################
 
-# # Print specified input parameters
-# st.header('Specified Input parameters')
-# st.write(housing)
-# st.write('---')
+# Print specified input parameters
+st.header('Specified Input parameters')
+st.write(housing)
+st.write('---')
 
 
 st.header('Your dream house would cost approximately:')
