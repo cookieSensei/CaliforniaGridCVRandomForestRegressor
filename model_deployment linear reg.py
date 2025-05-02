@@ -218,12 +218,12 @@ st.write(final_predictions)
 st.write('---')
 
 ##############
-st.header("Population Density vs House Value")
+# st.header("Population Density vs House Value")
+# # image = Image.open("California Town Density.jpg")
 # image = Image.open("California Town Density.jpg")
-image = Image.open("California Town Density.jpg")
-st.image(image)
+# st.image(image)
 
-# st.image(image, caption='Population Density vs House Value')
+# # st.image(image, caption='Population Density vs House Value')
 
 
 ###########################
