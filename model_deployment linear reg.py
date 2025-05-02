@@ -83,7 +83,7 @@ housing_prepared = full_pipeline.fit_transform(housing)
 
 print(housing)
 
-grid_search = joblib.load("linear_regressor")
+grid_search = joblib.load("support_vector_regressor")
 
 
 final_predictions = grid_search.predict(housing_prepared[0].reshape(1,-1))
